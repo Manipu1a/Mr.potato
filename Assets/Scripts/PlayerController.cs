@@ -27,10 +27,8 @@ public class PlayerController : MonoBehaviour {
     void Update () {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if(Input.GetButtonDown("Jump") && grounded)
-        {
+        if (Input.GetButtonDown("Jump") && grounded)
             jump = true;
-        }
     }
    void FixedUpdate()
     {
@@ -52,6 +50,7 @@ public class PlayerController : MonoBehaviour {
 
         if (jump)
         {
+            anim.SetTrigger("Jump");
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
 
             jump = false;
