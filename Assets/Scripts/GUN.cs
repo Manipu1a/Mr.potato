@@ -18,6 +18,7 @@ public class GUN : MonoBehaviour {
     void Update () {
         if (Input.GetButtonDown("Fire1")){
             anim.SetTrigger("Shoot");
+            GetComponent<AudioSource>().Play();
 
             if (playerCtrl.facingRight)
             {

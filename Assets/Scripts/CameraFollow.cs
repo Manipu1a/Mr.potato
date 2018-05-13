@@ -46,10 +46,9 @@ public class CameraFollow : MonoBehaviour {
         if (CheckYMargin())
             targetY = Mathf.Lerp(transform.position.y, player.position.y, ySmooth * Time.deltaTime);
 
-      /*  targetX = Mathf.Clamp(targetX, minXAndY.x, maxXAndY.x);
-        targetY = Mathf.Clamp(targetY, minXAndY.y, maxXAndY.y);*/
+       targetX = Mathf.Clamp(targetX, minXAndY.x, maxXAndY.x);
+        targetY = Mathf.Clamp(targetY, minXAndY.y, maxXAndY.y);
       
         transform.position = new Vector3(targetX, targetY, transform.position.z);
-        
     }
 }
