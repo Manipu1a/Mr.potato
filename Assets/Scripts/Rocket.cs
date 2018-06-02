@@ -12,7 +12,18 @@ public class Rocket : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Player")
+        if (collision.tag == "Enemy")
+        {
+            // ... find the Enemy script and call the Hurt function.
+            collision.gameObject.GetComponent<Enemy>().Hurt();
+
+            // Call the explosion instantiation.
+            OnExplode();
+
+            // Destroy the rocket.
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag != "Player")
         {
             OnExplode();
             Destroy(gameObject);
@@ -28,5 +39,4 @@ public class Rocket : MonoBehaviour {
         Instantiate(explosion, transform.position, randomRotation);
             
     }
-
 }

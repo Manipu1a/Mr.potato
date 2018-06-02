@@ -6,13 +6,13 @@ public class GUN : MonoBehaviour {
     public Rigidbody2D rocket;
     public float speed = 20f;
 
-    private PlayerController playerCtrl;
+    private PlayerControl playerCtrl;
     private Animator anim;
 
     void Awake()
     {
         anim = transform.root.gameObject.GetComponent<Animator>();
-        playerCtrl = transform.root.GetComponent<PlayerController>();
+        playerCtrl = transform.root.GetComponent<PlayerControl>();
     }
     // Update is called once per frame
     void Update () {

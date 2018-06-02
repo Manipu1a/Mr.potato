@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerControl : MonoBehaviour {
     [HideInInspector]
     public bool facingRight = true;         // For determining which way the player is currently facing.
     [HideInInspector]
